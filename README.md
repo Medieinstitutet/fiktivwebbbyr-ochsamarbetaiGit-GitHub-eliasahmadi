@@ -1,0 +1,3 @@
+I den här uppgiften jobbade jag helt själv, mest för att visa att jag förstått grunderna i Git och GitHub. Jag skapade en develop-branch och gjorde sedan två olika feature-branches med ändringar i index.html. Efter att jag pushat upp dem öppnade jag pull requests på GitHub.
+När jag merge:ade variant A gick allt bra, men när jag skulle merge:a variant B fick jag en konflikt eftersom båda branches ändrat samma rad. Då fick jag lösa konflikten och sen kunde jag slutföra merge:n.
+Det här gjorde att jag fick öva på hela flödet: skapa branches, committa, pusha, göra pull requests och lösa konflikter – fast jag gjorde det ensam istället för i ett team.
