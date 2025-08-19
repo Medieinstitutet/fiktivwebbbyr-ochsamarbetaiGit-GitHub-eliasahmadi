@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="sv" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Elias Webbyrå – snabba, snygga och tillgängliga webbplatser." />
+  <title>Elias Webbyrå</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Hoppa till innehåll</a>
+
+  <header class="site-header" data-observe>
+    <div class="container nav-wrap">
+      <a class="logo" href="#hero" aria-label="Elias Webbyrå">Elias<span>Webbyrå</span></a>
+
+      <nav id="primary-nav" class="nav" aria-label="Huvudmeny">
+        <ul>
+          <li><a href="#hero" data-spy>Hem</a></li>
+          <li><a href="#services" data-spy>Tjänster</a></li>
+          <li><a href="#portfolio" data-spy>Portfolio</a></li>
+          <li><a href="#about" data-spy>Om oss</a></li>
+          <li><a href="#contact" data-spy>Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" data-action="toggle-theme" aria-label="Växla tema">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 13A9 9 0 1 1 11 2.36 7 7 0 1 0 21.64 13z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" data-action="toggle-menu" aria-controls="primary-nav" aria-expanded="false" aria-label="Öppna meny">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="hero" class="hero section" data-section data-observe>
+      <div class="container grid-2">
+        <div class="stack gap-l">
+          <h1 class="display">Vi bygger snabba, tillgängliga & vackra sajter.</h1>
+          <p class="lead">Prestanda, SEO och UX i fokus – allt paketerat med modern teknik och tydlig process.</p>
+          <div class="row gap-m">
+            <a class="btn" href="#contact">Starta projekt</a>
+            <a class="btn ghost" href="#portfolio">Se case</a>
+          </div>
+
+          <div class="kpis">
+            <div><span class="kpi" data-counter="18">0</span><small>levererade projekt</small></div>
+            <div><span class="kpi" data-counter="9">0</span><small>nöjda kunder</small></div>
+            <div><span class="kpi" data-counter="99">0</span><small>Performance-score</small></div>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="blob"></div>
+          <div class="card shadow-l">
+            <h3>Audit & Insights</h3>
+            <ul>
+              <li>Lighthouse 95–100</li>
+              <li>Core Web Vitals OK</li>
+              <li>WCAG AA-baskrav</li>
+            </ul>
+          </div>
+          <div class="card shadow-l">
+            <h3>Tech stack</h3>
+            <ul>
+              <li>HTML / CSS / JS</li>
+              <li>Optimerad build</li>
+              <li>CI-vänligt flöde</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tjänster -->
+    <section id="services" class="section" data-section data-observe>
+      <div class="container">
+        <h2 class="h1">Tjänster</h2>
+        <p class="muted">Från idé till production – paketerat i tydliga leverabler.</p>
+
+        <div class="card-grid">
+          <article class="card service">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v14H3zM7 20h10"/></svg>
+            </div>
+            <h3>Webbutveckling</h3>
+            <p>Snabba, responsiva sajter med robust struktur och ren kod.</p>
+          </article>
+
+          <article class="card service">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l4 8H8l4-8zm0 20V10"/></svg>
+            </div>
+            <h3>Prestanda & SEO</h3>
+            <p>Core Web Vitals, semantik, metadata – mätbar effekt på ranking.</p>
+          </article>
+
+          <article class="card service">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v10H4zM8 6h8"/></svg>
+            </div>
+            <h3>Design & UX</h3>
+            <p>Tydliga flöden, tillgängliga komponenter och visuell konsistens.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section" data-section data-observe>
+      <div class="container">
+        <div class="row space-between align-end">
+          <div>
+            <h2 class="h1">Portfolio</h2>
+            <p class="muted">Filtrera på kategori för att se relevanta case.</p>
+          </div>
+          <div class="filters" role="group" aria-label="Filtrera projekt">
+            <button class="chip is-active" data-filter="all">Alla</button>
+            <button class="chip" data-filter="web">Web</button>
+            <button class="chip" data-filter="ui">UI</button>
+            <button class="chip" data-filter="ecom">E-commerce</button>
+          </div>
+        </div>
+
+        <div id="portfolio-grid" class="card-grid portfolio-grid" aria-live="polite"></div>
+
+        <!-- Modal för “case” -->
+        <dialog id="project-modal" aria-labelledby="modal-title">
+          <article class="modal-card">
+            <button class="icon-btn close" data-action="close-modal" aria-label="Stäng">
+              <svg viewBox="0 0 24 24"><path d="M6 6l12 12M6 18L18 6"/></svg>
+            </button>
+            <h3 id="modal-title"></h3>
+            <p class="muted" id="modal-tags"></p>
+            <div id="modal-media" class="modal-media"></div>
+            <p id="modal-desc"></p>
+            <div class="row">
+              <a id="modal-link" class="btn" href="#" target="_blank" rel="noopener">Öppna demo</a>
+            </div>
+          </article>
+        </dialog>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section" data-section data-observe>
+      <div class="container">
+        <h2 class="h1">Vad säger kunderna?</h2>
+        <div class="carousel" role="region" aria-roledescription="karusell" aria-label="Kundcitat">
+          <ul class="carousel-track" id="carousel-track">
+            <!-- Renderas av JS -->
+          </ul>
+          <div class="carousel-controls">
+            <button class="icon-btn" data-action="prev" aria-label="Föregående">
+              <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <button class="icon-btn" data-action="next" aria-label="Nästa">
+              <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Om -->
+    <section id="about" class="section" data-section data-observe>
+      <div class="container grid-2">
+        <div class="stack gap-m">
+          <h2 class="h1">Om byrån</h2>
+          <p>Vi är en liten studio som brinner för hastighet, tillgänglighet och pixelperfekt UI. Vi jobbar datadrivet och iterativt.</p>
+          <ul class="timeline">
+            <li><strong>Discovery:</strong> Mål, målgrupp & scope</li>
+            <li><strong>Design:</strong> Wireframes → UI kit → prototyp</li>
+            <li><strong>Build:</strong> Komponenter, sidor, integrationer</li>
+            <li><strong>Launch:</strong> QA, prestanda, SEO, mätning</li>
+          </ul>
+        </div>
+        <div class="team">
+          <article class="card person">
+            <div class="avatar" data-initials="EM"></div>
+            <h3>Elias Momenjan</h3>
+            <p class="muted">Frontend utveckling & UX</p>
+          </article>
+          <article class="card person">
+            <div class="avatar" data-initials="AI"></div>
+            <h3>AI-Partner</h3>
+            <p class="muted">Kodgranskning & idéboll</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="section" data-section data-observe>
+      <div class="container grid-2">
+        <div class="stack gap-m">
+          <h2 class="h1">Starta ett projekt</h2>
+          <p class="muted">Beskriv kort ditt behov så återkommer vi med förslag och budget.</p>
+          <ul class="list">
+            <li>Lead time 2–6 veckor</li>
+            <li>Transparent scope</li>
+            <li>Fast feedback</li>
+          </ul>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Namn</label>
+            <input id="name" name="name" autocomplete="name" required />
+            <small class="error" data-error-for="name"></small>
+          </div>
+          <div class="field">
+            <label for="email">E-post</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <small class="error" data-error-for="email"></small>
+          </div>
+          <div class="field">
+            <label for="budget">Budget</label>
+            <select id="budget" name="budget" required>
+              <option value="">Välj…</option>
+              <option value="under-20">Under 20 000 kr</option>
+              <option value="20-60">20–60 000 kr</option>
+              <option value="60-plus">60 000+ kr</option>
+            </select>
+            <small class="error" data-error-for="budget"></small>
+          </div>
+          <div class="field">
+            <label for="message">Beskrivning</label>
+            <textarea id="message" name="message" rows="5" minlength="20" required placeholder="Berätta kort vad du behöver hjälp med…"></textarea>
+            <small class="error" data-error-for="message"></small>
+          </div>
+          <div class="row space-between align-center">
+            <label class="checkbox">
+              <input type="checkbox" id="consent" required />
+              <span>Jag godkänner att ni kontaktar mig</span>
+            </label>
+            <button class="btn" type="submit">Skicka</button>
+          </div>
+          <p class="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container row space-between align-center">
+      <small>© <span id="year"></span> Elias Webbyrå</small>
+      <nav aria-label="Sidfot">
+        <a href="#hero">Upp</a>
+      </nav>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top icon-btn" aria-label="Till toppen">
+    <svg viewBox="0 0 24 24"><path d="M12 5l-7 7h14zM5 12v7h14v-7"/></svg>
+  </button>
+
+  <noscript><div class="noscript">Observera: vissa animationer/funktioner kräver JavaScript.</div></noscript>
+  <script defer src="app.js"></script>
+</body>
+</html>
