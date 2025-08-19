@@ -1,11 +1,10 @@
-/* ===== Helpers */
+
 const $ = (sel, el = document) => el.querySelector(sel);
 const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 
-/* ===== År i footer */
 $("#year").textContent = new Date().getFullYear();
 
-/* ===== Tema (dark/light) – sparar val i localStorage */
+
 (() => {
   const root = document.documentElement;
   const KEY = "theme";
@@ -18,7 +17,7 @@ $("#year").textContent = new Date().getFullYear();
   });
 })();
 
-/* ===== Mobilmeny */
+
 (() => {
   const btn = $("[data-action='toggle-menu']");
   const nav = $("#primary-nav");
@@ -26,14 +25,14 @@ $("#year").textContent = new Date().getFullYear();
     const open = nav.classList.toggle("open");
     btn.setAttribute("aria-expanded", String(open));
   });
-  // Stäng på länk-klick
+  
   $$("#primary-nav a").forEach(a => a.addEventListener("click", () => {
     nav.classList.remove("open");
     btn.setAttribute("aria-expanded", "false");
   }));
 })();
 
-/* ===== Smooth scroll + scrollspy */
+
 (() => {
   $$("#primary-nav a").forEach(a => {
     a.addEventListener("click", e => {
@@ -58,7 +57,7 @@ $("#year").textContent = new Date().getFullYear();
   sections.forEach(s => s && obs.observe(s));
 })();
 
-/* ===== Reveal on scroll */
+
 (() => {
   const obs = new IntersectionObserver((ents) => {
     ents.forEach(ent => ent.target.classList.toggle("visible", ent.isIntersecting));
@@ -66,7 +65,7 @@ $("#year").textContent = new Date().getFullYear();
   $$("[data-observe]").forEach(el => obs.observe(el));
 })();
 
-/* ===== KPI up-räknare */
+
 (() => {
   const counters = $$("[data-counter]");
   const obs = new IntersectionObserver((ents) => {
@@ -88,7 +87,7 @@ $("#year").textContent = new Date().getFullYear();
   counters.forEach(c => obs.observe(c));
 })();
 
-/* ===== Portfolio (render + filter + modal) */
+
 const PROJECTS = [
   { id: 1, title: "Snabb företagslandning", cat: "web", tags: ["HTML", "CSS", "SEO"], desc: "Lättvikt, fokus på CWV.", url: "#", hue: 210 },
   { id: 2, title: "UI kit & komponenter", cat: "ui", tags: ["Designsystem", "WCAG"], desc: "Skalbara UI-mönster.", url: "#", hue: 270 },
@@ -159,7 +158,7 @@ const PROJECTS = [
   render();
 })();
 
-/* ===== Testimonials (karusell) */
+
 (() => {
   const data = [
     { quote: "Rapp leverans och riktigt snygg finish.", who: "Sara, caféägare" },
@@ -181,7 +180,7 @@ const PROJECTS = [
     const offset = -idx * 100;
     track.style.transform = `translateY(${offset}%)`;
   }
-  // gör vertikal "slide" via CSS grid height-hack
+  
   track.style.transition = "transform .4s";
   track.style.willChange = "transform";
   track.style.gridAutoRows = "1fr";
@@ -191,7 +190,7 @@ const PROJECTS = [
   setInterval(() => show(idx + 1), 4500);
 })();
 
-/* ===== Kontaktformulär validering */
+
 (() => {
   const form = $("#contact-form");
   const errors = {
@@ -242,7 +241,7 @@ const PROJECTS = [
   });
 })();
 
-/* ===== Back to top */
+
 (() => {
   const btn = $("#to-top");
   window.addEventListener("scroll", () => {
