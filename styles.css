@@ -1,4 +1,4 @@
-/* =========== Design tokens */
+
 :root {
     --bg: #0b1020;
     --panel: #10182f;
@@ -26,11 +26,9 @@
     --text: #e6e8ef;
     --muted: #a7b0c3;
   }
-  html[data-theme="dark"] {
-    /* samma tokens – vi inleder i “dark” estetiskt */
-  }
+  html[data-theme="dark"] 
   
-  /* =========== Bas */
+  
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; }
   body {
@@ -65,7 +63,7 @@
   .btn:hover { transform: translateY(-1px); }
   .btn.ghost { background: transparent; color: var(--text); border: 1px solid #31406b; box-shadow: none; }
   
-  /* =========== Header/Nav */
+
   .site-header {
     position: sticky; top: 0; z-index: 5; background: rgba(10,14,32,.7);
     backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.06);
@@ -91,7 +89,7 @@
     .menu-btn { display: grid; }
   }
   
-  /* =========== Hero */
+  
   .hero .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
   .kpi { font-size: 36px; font-weight: 900; display: block; }
   .hero-art { position: relative; min-height: 360px; }
@@ -108,7 +106,7 @@
   .hero-art .card:nth-of-type(1) { top: 20px; }
   .hero-art .card:nth-of-type(2) { bottom: 20px; }
   
-  /* =========== Cards & grids */
+ 
   .card-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gap); margin-top: 20px; }
   .card { grid-column: span 4; background: var(--card); border: 1px solid #2b355e; border-radius: var(--radius); padding: 18px; }
   .shadow-l { box-shadow: var(--shadow); }
@@ -118,7 +116,7 @@
   .service .icon-wrap { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: #1a2550; margin-bottom: 10px; }
   .service svg { width: 24px; height: 24px; fill: #b9c7ff; }
   
-  /* Portfolio */
+  
   .portfolio-grid .project { overflow: hidden; padding: 0; }
   .project .thumb {
     aspect-ratio: 16/10; border-bottom: 1px solid #2b355e;
@@ -132,14 +130,14 @@
   }
   .chip.is-active { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #0b1020; }
   
-  /* Modal */
+  
   dialog { border: none; padding: 0; background: transparent; }
   dialog::backdrop { background: rgba(3,7,18,.6); backdrop-filter: blur(2px); }
   .modal-card { width: min(760px, 92vw); background: var(--panel); border: 1px solid #2b355e; border-radius: var(--radius); padding: 18px; position: relative; }
   .modal-card .close { position: absolute; right: 10px; top: 10px; }
   .modal-media { aspect-ratio: 16/9; background: #0e1634; border: 1px solid #2b355e; border-radius: var(--radius-s); margin: 12px 0; }
   
-  /* Carousel */
+ 
   .carousel { position: relative; }
   .carousel-track { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
   .carousel .slide {
@@ -148,7 +146,7 @@
   .carousel .who { color: #b9c7ff; font-weight: 700; }
   .carousel-controls { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
   
-  /* Om sektion */
+  
   .timeline { margin: 0; padding-left: 18px; }
   .timeline li { margin: 8px 0; }
   .team { display: grid; gap: var(--gap); align-self: start; }
@@ -156,7 +154,7 @@
     width: 52px; height: 52px; border-radius: 50%; background: #1a2550; display: grid; place-items: center; color: #c8d3ff; font-weight: 800;
   }
   
-  /* Form */
+ 
   .field { display: grid; gap: 6px; margin-bottom: 14px; }
   input, select, textarea {
     width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #2b355e; background: #0f172a; color: var(--text);
@@ -165,14 +163,14 @@
   .error { color: var(--danger); min-height: 1.2em; }
   .form-feedback { min-height: 1.2em; margin-top: 10px; }
   
-  /* Footer */
+  
   .site-footer { padding: 22px 0; border-top: 1px solid rgba(255,255,255,.06); background: #0b1228; }
   
-  /* Back to top */
+  
   .to-top { position: fixed; right: 16px; bottom: 16px; opacity: 0; pointer-events: none; transition: opacity .25s; }
   .to-top.show { opacity: 1; pointer-events: auto; }
   
-  /* Skip-link */
+  
   .skip-link {
     position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
   }
@@ -180,7 +178,7 @@
     left: 10px; top: 10px; width: auto; height: auto; background: #fff; color: #000; padding: 6px 10px; border-radius: 8px;
   }
   
-  /* Reveal on scroll */
+  
   [data-observe] { opacity: 0; transform: translateY(12px); transition: opacity .6s, transform .6s; }
   [data-observe].visible { opacity: 1; transform: translateY(0); }
   
